@@ -1,0 +1,21 @@
+toc:
+  properties:
+    subcollection: atracker-cli-plugin
+    version: 2
+    audience: service
+    href: /docs/atracker-cli-plugin?topic=atracker-cli-plugin-atracker-cli-overview
+    console-page: /observe/activitytracker
+    product-page: https://www.ibm.com/cloud/activity-tracker
+    path: atracker-cli-plugin
+    label: IBM Cloud Activity Tracker Event Routing CLI
+
+  entries: 
+  - navgroup: 
+      id: reference
+      topics: 
+      - topic: atracker-cli-overview.md
+        navtitle: Overview
+      - topic: atracker-cli-v1.md
+        navtitle: V1 CLI reference
+      - topic: atracker-cli-v2.md
+        navtitle: v2 CLI reference
