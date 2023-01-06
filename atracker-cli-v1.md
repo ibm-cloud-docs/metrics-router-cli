@@ -1,7 +1,7 @@
 ---
- 
+
 copyright:
-  years:  2021, 2022
+  years:  2021, 2023
 lastupdated: "2022-08-12"
 
 subcollection: atracker-cli-plugin
@@ -41,14 +41,14 @@ You're notified on the command line when updates to the {{site.data.keyword.clou
 ## ibmcloud atracker route create
 {: #route-create-v1-cli}
 
-Use this command to create a new route for an {{site.data.keyword.atracker_full_notm}} target in a region. 
+Use this command to create a new route for an {{site.data.keyword.atracker_full_notm}} target in a region.
 
 ```sh
 ibmcloud atracker route create --name <ROUTE_NAME> --target <TARGET> [--receive-global-events] [--region <REGION>] [--output JSON]
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #route-create-v1-options}
 
 `--target <TARGET_ID>`
@@ -82,7 +82,7 @@ ibmcloud atracker route update --route <ROUTE> [--name <ROUTE_NAME>] [--receive-
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #route-update-v1-options}
 
 `--route <ROUTE>`
@@ -112,14 +112,14 @@ ibmcloud atracker route update --route <ROUTE> [--name <ROUTE_NAME>] [--receive-
 ## ibmcloud atracker route rm
 {: #route-delete-v1-cli}
 
-Use this command to delete a route for an {{site.data.keyword.atracker_full_notm}} region. 
+Use this command to delete a route for an {{site.data.keyword.atracker_full_notm}} region.
 
 ```sh
 ibmcloud atracker route rm --route <ROUTE> [--region <REGION>] [--force]
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #route-rm-v1-options}
 
 `--route <ROUTE>`
@@ -137,14 +137,14 @@ ibmcloud atracker route rm --route <ROUTE> [--region <REGION>] [--force]
 ## ibmcloud atracker route get
 {: #route-view-v1-cli}
 
-Use this command to get information about a route for an {{site.data.keyword.atracker_full_notm}} region. 
+Use this command to get information about a route for an {{site.data.keyword.atracker_full_notm}} region.
 
 ```sh
 ibmcloud atracker route get --route [ <ROUTE_ID> | <ROUTE_NAME> ] [--region <REGION>] [--output JSON]
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #route-get-v1-options}
 
 `--route <ROUTE_ID>` | `<ROUTE_NAME>`
@@ -162,14 +162,14 @@ ibmcloud atracker route get --route [ <ROUTE_ID> | <ROUTE_NAME> ] [--region <REG
 ## ibmcloud atracker route ls
 {: #route-list-v1-cli}
 
-Use this command to list all the configured routes for a specific {{site.data.keyword.atracker_full_notm}} region or all {{site.data.keyword.atracker_full_notm}} regions. 
+Use this command to list all the configured routes for a specific {{site.data.keyword.atracker_full_notm}} region or all {{site.data.keyword.atracker_full_notm}} regions.
 
 ```sh
 ibmcloud atracker route ls [--region <REGION> | --all-regions ] [--output JSON]
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #route-ls-v1-options}
 
 `--region <REGION>` | `-r <REGION>`
@@ -194,7 +194,7 @@ Use this command to create an {{site.data.keyword.atracker_full_notm}} service t
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #target-create-v1-options}
 
 `--region <REGION>` | `-r <REGION>`
@@ -214,9 +214,9 @@ Use this command to create an {{site.data.keyword.atracker_full_notm}} service t
 
     ```json
     {
-      "endpoint": "aaaaa", 
+      "endpoint": "aaaaa",
       "target_crn": "yyyyy",
-      "bucket": "zzzzzz", 
+      "bucket": "zzzzzz",
       "api_key": "xxxxxx"
     }
     ```
@@ -250,7 +250,7 @@ ibmcloud atracker target update --target <TARGET> [--name <TARGET_NAME>] [ --fil
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #target-update-v1-options}
 
 `--target <TARGET>`
@@ -270,9 +270,9 @@ ibmcloud atracker target update --target <TARGET> [--name <TARGET_NAME>] [ --fil
 
     ```json
     {
-      "endpoint": "aaaaa", 
+      "endpoint": "aaaaa",
       "target_crn": "yyyyy",
-      "bucket": "zzzzzz", 
+      "bucket": "zzzzzz",
       "api_key": "xxxxxx"
     }
     ```
@@ -299,14 +299,14 @@ ibmcloud atracker target update --target <TARGET> [--name <TARGET_NAME>] [ --fil
 ## ibmcloud atracker target rm
 {: #target-delete-v1-cli}
 
-Use this command to delete a target for an {{site.data.keyword.atracker_full_notm}} region. 
+Use this command to delete a target for an {{site.data.keyword.atracker_full_notm}} region.
 
 ```sh
 ibmcloud atracker target rm --target <TARGET> [--region <REGION>] [--force]
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #target-rm-v1-options}
 
 `--target <TARGET>`
@@ -324,14 +324,14 @@ ibmcloud atracker target rm --target <TARGET> [--region <REGION>] [--force]
 ## ibmcloud atracker target validate
 {: #target-validate-v1-cli}
 
-Use this command to validate that a target is correctly configured for an {{site.data.keyword.atracker_full_notm}} region. 
+Use this command to validate that a target is correctly configured for an {{site.data.keyword.atracker_full_notm}} region.
 
 ```sh
 ibmcloud atracker target validate --target <TARGET> [--region <REGION>] [--output JSON]
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #target-validate-v1-options}
 
 `--target <TARGET>`
@@ -349,14 +349,14 @@ ibmcloud atracker target validate --target <TARGET> [--region <REGION>] [--outpu
 ## ibmcloud atracker target get
 {: #target-get-v1-cli}
 
-Use this command to get information about a target for an {{site.data.keyword.atracker_full_notm}} region. 
+Use this command to get information about a target for an {{site.data.keyword.atracker_full_notm}} region.
 
 ```sh
 ibmcloud atracker target get --target <TARGET> [--region <REGION>] [--output JSON]
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #target-get-v1-options}
 
 `--target <TARGET>`
@@ -381,7 +381,7 @@ ibmcloud atracker target ls [--region <REGION>] [--output JSON]
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #target-v1-options}
 
 `--region <REGION>` | `-r <REGION>`
@@ -403,7 +403,7 @@ ibmcloud atracker endpoint api ls [--output JSON]
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #endpoint-ls-v1-options}
 
 `--output JSON`
@@ -422,7 +422,7 @@ ibmcloud atracker endpoint api get [--region <REGION>] [--output JSON]
 ```
 {: pre}
 
-### Command options 
+### Command options
 {: #endpoint-get-v1-options}
 
 `--region <REGION>` | `-r <REGION>`
@@ -449,7 +449,7 @@ ibmcloud atracker endpoint api update --public-enabled FALSE [--region <REGION>]
 Before disabling a public endpoint (`--public-enabled FALSE`), make sure your account has access to the private endpoint.  You can do this by running the command `bx account show`.  If `VRF Enabled` is `true` and `Service Endpoint Enabled` is `true` then you have access to the private endpoint.  If you do not have access to the private endpoint, you will be unable to re-enable the public endpoint since private endpoint access is required to re-enable the public endpoint.
 {: important}
 
-### Command options 
+### Command options
 {: #endpoint-update-v1-disable}
 
 `--region <REGION>` | `-r <REGION>`
@@ -476,10 +476,10 @@ ibmcloud atracker endpoint api update --public-enabled TRUE [--region <REGION>] 
 ```
 {: pre}
 
-You must have access to a private endpoint to enable a public endpoint. 
+You must have access to a private endpoint to enable a public endpoint.
 {: important}
 
-### Command options 
+### Command options
 {: #endpoint-update-v1-enable}
 
 `--region <REGION>` | `-r <REGION>`
@@ -497,10 +497,9 @@ You must have access to a private endpoint to enable a public endpoint.
 ## ibmcloud atracker config report
 {: #route-report-v1-running}
 
-Use the following command to return a report about the {{site.data.keyword.atracker_full_notm}} service configuration.  This report will include any issues in the configuration. 
+Use the following command to return a report about the {{site.data.keyword.atracker_full_notm}} service configuration.  This report will include any issues in the configuration.
 
 ```text
-ibmcloud atracker config report --output YAML 
+ibmcloud atracker config report --output YAML
 ```
 {: pre}
-
