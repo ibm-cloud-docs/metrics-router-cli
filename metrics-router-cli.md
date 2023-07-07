@@ -58,53 +58,53 @@ ibmcloud metrics-router route create --name ROUTE_NAME ( --rules RULES |  --file
 `--name ROUTE_NAME`
 :   The name to be given to the route.
 
-    Do not include any personal identifying information (PII) in any resource names.
-    {: important}
+   Do not include any personal identifying information (PII) in any resource names.
+   {: important}
 
 `--file RULES_DEFINITION_JSON_FILE`
 :   A JSON file that contains the definition of the rules for route. The file needs to be formatted as follows:
 
-    ```json
-    [
-      {
-        "targets": [{"id":"ID1"},{"id":"ID2"}]
-      }
-    ]
-    ```
-    {: codeblock}
+   ```json
+   [
+     {
+       "targets": [{"id":"ID1"},{"id":"ID2"}]
+     }
+   ]
+   ```
+   {: codeblock}
 
-    Where `targets` is a comma-separated list of target IDs.
+   Where `targets` is a comma-separated list of target IDs.
 
-    The rule definition can optionally also include inclusion filters. For example,
+   The rule definition can optionally also include inclusion filters. For example,
 
-    ```json
-    [{
-        "action": "send",
-        "targets": [{
-          "id":"11111111-1111-1111-1111-111111111111"
-        }],
-        "inclusion_filters": [
-            {
-              "operand": "service_name",
-              "operator": "in",
-              "values": [
-                "appconnect",
-                "cloudant",
-                "containers-kubernetes"
-              ]
-            },
-            {
-              "operand": "location",
-              "operator": "in",
-              "values": [
-                "us-south",
-                "eu-de"
-              ]
-            }
-        ]
-      }]
-    ```
-    {: codeblock}
+   ```json
+   [{
+       "action": "send",
+       "targets": [{
+         "id":"11111111-1111-1111-1111-111111111111"
+       }],
+       "inclusion_filters": [
+           {
+             "operand": "service_name",
+             "operator": "in",
+             "values": [
+               "appconnect",
+               "cloudant",
+               "containers-kubernetes"
+             ]
+           },
+           {
+             "operand": "location",
+             "operator": "in",
+             "values": [
+               "us-south",
+               "eu-de"
+             ]
+           }
+       ]
+     }]
+   ```
+   {: codeblock}
 
     Where:
 
@@ -123,72 +123,72 @@ ibmcloud metrics-router route create --name ROUTE_NAME ( --rules RULES |  --file
    `operator`
    :   Two operators are supported: `in` and `is`.
 
-       `in`
-       :   The value of the operand property is compared to a list of values.
+      `in`
+      :   The value of the operand property is compared to a list of values.
 
-           You can define up to 20 values.
+         You can define up to 20 values.
 
-       `is`
-       :   The value of the operand property is compared to a single value.
+      `is`
+      :   The value of the operand property is compared to a single value.
 
-           When using `is`, only 1 value can be specified.
+         When using `is`, only 1 value can be specified.
 
    `values`
    :   A string, or an array of strings, to be compared with the `operand` property to determine whether the metric is routed or not. When the `is` `operator` is used, `values` must include a single string. When the `in` `operator` is used, `values` can include multiple strings in an array.
 
-       Valid values depend on the `operand`.
+      Valid values depend on the `operand`.
 
-       `location`
-       :   Any location where [{{site.data.keyword.metrics_router_full_notm}} is available.](/docs/metrics-router?topic=metrics-router-regions)
+      `location`
+      :   Any location where [{{site.data.keyword.metrics_router_full_notm}} is available.](/docs/metrics-router?topic=metrics-router-regions)
 
-       `service_name`
-       :   The CRN service name of an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
+      `service_name`
+      :   The CRN service name of an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
 
-       `service_instance`, `resource_type`, and `resource`
-       :   Values appropriate to an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
+      `service_instance`, `resource_type`, and `resource`
+      :   Values appropriate to an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
 
 `--rules RULES`
 :   A JSON formatted rule definition enclosed in single quotation marks. For example,
 
-    ```json
-    --rules '[{"action": "send", "targets":[{"id": "11111111-1111-1111-1111-111111111111"}], "inclusion_filters":[{"operand": "location","operator": "is","values": ["us-south"]}]}]
-    ```
-    {: codeblock}
+   ```json
+   --rules '[{"action": "send", "targets":[{"id": "11111111-1111-1111-1111-111111111111"}], "inclusion_filters":[{"operand": "location","operator": "is","values": ["us-south"]}]}]
+   ```
+   {: codeblock}
 
-    Where `targets` is a comma-separated list of target IDs.
+   Where `targets` is a comma-separated list of target IDs.
 
-    The rule definition can optionally also include inclusion filters. For example,
+   The rule definition can optionally also include inclusion filters. For example,
 
-    ```json
-    [{
-        "action": "send",
-        "targets": [{
-          "id":"11111111-1111-1111-1111-111111111111"
-        }],
-        "inclusion_filters": [
-            {
-              "operand": "service_name",
-              "operator": "in",
-              "values": [
-                "appconnect",
-                "cloudant",
-                "containers-kubernetes"
-              ]
-            },
-            {
-              "operand": "location",
-              "operator": "in",
-              "values": [
-                "us-south",
-                "eu-de"
-              ]
-            }
-        ]
-      }]
-    ```
-    {: codeblock}
+   ```json
+   [{
+       "action": "send",
+       "targets": [{
+         "id":"11111111-1111-1111-1111-111111111111"
+       }],
+       "inclusion_filters": [
+           {
+             "operand": "service_name",
+             "operator": "in",
+             "values": [
+               "appconnect",
+               "cloudant",
+               "containers-kubernetes"
+             ]
+           },
+           {
+             "operand": "location",
+             "operator": "in",
+             "values": [
+               "us-south",
+               "eu-de"
+             ]
+           }
+       ]
+     }]
+   ```
+   {: codeblock}
 
-    Where:
+   Where:
 
    `action`
    :   Action defines whether {{site.data.keyword.metrics_router_full}} includes or excludes metrics on the route. Two actions are supported: `send` and `drop`. If not specified, the default action is to send the metrics.
@@ -205,29 +205,29 @@ ibmcloud metrics-router route create --name ROUTE_NAME ( --rules RULES |  --file
    `operator`
    :   Two operators are supported: `in` and `is`.
 
-       `in`
-       :   The value of the operand property is compared to a list of values.
+      `in`
+      :   The value of the operand property is compared to a list of values.
 
            You can define up to 20 values.
 
-       `is`
-       :   The value of the operand property is compared to a single value.
+      `is`
+      :   The value of the operand property is compared to a single value.
 
-           When using `is`, only 1 value can be specified.
+         When using `is`, only 1 value can be specified.
 
    `values`
    :   A string, or an array of strings, to be compared with the `operand` property to determine whether the metric is routed or not. When the `is` `operator` is used, `values` must include a single string. When the `in` `operator` is used, `values` can include multiple strings in an array.
 
-       Valid values depend on the `operand`.
+      Valid values depend on the `operand`.
 
-       `location`
-       :   Any location where [{{site.data.keyword.metrics_router_full_notm}} is available.](/docs/metrics-router?topic=metrics-router-regions)
+      `location`
+      :   Any location where [{{site.data.keyword.metrics_router_full_notm}} is available.](/docs/metrics-router?topic=metrics-router-regions)
 
-       `service_name`
-       :   The CRN service name of an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
+      `service_name`
+      :   The CRN service name of an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
 
-       `service_instance`, `resource_type`, and `resource`
-       :   Values appropriate to an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
+      `service_instance`, `resource_type`, and `resource`
+      :   Values appropriate to an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
 
 `--output FORMAT`
 :   If `JSON` is specified, output is returned in JSON format. If `JSON` is not specified, output is returned in a tabular format.
@@ -260,55 +260,55 @@ ibmcloud metrics-router route update --route ROUTE [--name ROUTE_NAME] ( --rules
 `--name ROUTE_NAME`
 :   The updated name to be given to the route (optional).
 
-    Do not include any personal identifying information (PII) in any resource names.
-    {: important}
+   Do not include any personal identifying information (PII) in any resource names.
+   {: important}
 
 `--file RULES_DEFINITION_JSON_FILE`
 :   A JSON file that contains the definition of the rules for route. The file needs to be formatted as follows:
 
-    ```json
-    [
-      {
-        "targets": [{"id":"ID1"},{"id":"ID2"}]
-      }
-    ]
-    ```
-    {: codeblock}
+   ```json
+   [
+     {
+       "targets": [{"id":"ID1"},{"id":"ID2"}]
+     }
+   ]
+   ```
+   {: codeblock}
 
-    Where `targets` is a comma-separated list of target IDs.
+   Where `targets` is a comma-separated list of target IDs.
 
-    The rule definition can optionally also include inclusion filters. For example,
+   The rule definition can optionally also include inclusion filters. For example,
 
-    ```json
-    [{
-        "action": "send",
-        "targets": [{
-          "id":"11111111-1111-1111-1111-111111111111"
-        }],
-        "inclusion_filters": [
-            {
-              "operand": "service_name",
-              "operator": "in",
-              "values": [
-                "appconnect",
-                "cloudant",
-                "containers-kubernetes"
-              ]
-            },
-            {
-              "operand": "location",
-              "operator": "in",
-              "values": [
-                "us-south",
-                "eu-de"
-              ]
-            }
-        ]
-      }]
-    ```
-    {: codeblock}
+   ```json
+   [{
+       "action": "send",
+       "targets": [{
+         "id":"11111111-1111-1111-1111-111111111111"
+       }],
+       "inclusion_filters": [
+           {
+             "operand": "service_name",
+             "operator": "in",
+             "values": [
+               "appconnect",
+               "cloudant",
+               "containers-kubernetes"
+             ]
+           },
+           {
+             "operand": "location",
+             "operator": "in",
+             "values": [
+               "us-south",
+               "eu-de"
+             ]
+           }
+       ]
+     }]
+   ```
+   {: codeblock}
 
-    Where:
+   Where:
 
    `action`
    :   Action defines whether {{site.data.keyword.metrics_router_full}} includes or excludes metrics on the route. Two actions are supported: `send` and `drop`. If not specified, the default action is to send the metrics.
@@ -325,72 +325,72 @@ ibmcloud metrics-router route update --route ROUTE [--name ROUTE_NAME] ( --rules
    `operator`
    :   Two operators are supported: `in` and `is`.
 
-       `in`
-       :   The value of the operand property is compared to a list of values.
+      `in`
+      :   The value of the operand property is compared to a list of values.
 
-           You can define up to 20 values.
+         You can define up to 20 values.
 
-       `is`
-       :   The value of the operand property is compared to a single value.
+      `is`
+      :   The value of the operand property is compared to a single value.
 
-           When using `is`, only 1 value can be specified.
+         When using `is`, only 1 value can be specified.
 
    `values`
    :   A string, or an array of strings, to be compared with the `operand` property to determine whether the metric is routed or not. When the `is` `operator` is used, `values` must include a single string. When the `in` `operator` is used, `values` can include multiple strings in an array.
 
-       Valid values depend on the `operand`.
+      Valid values depend on the `operand`.
 
-       `location`
-       :   Any location where [{{site.data.keyword.metrics_router_full_notm}} is available.](/docs/metrics-router?topic=metrics-router-regions)
+      `location`
+      :   Any location where [{{site.data.keyword.metrics_router_full_notm}} is available.](/docs/metrics-router?topic=metrics-router-regions)
 
-       `service_name`
-       :   The CRN service name of an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
+      `service_name`
+      :   The CRN service name of an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
 
-       `service_instance`, `resource_type`, and `resource`
-       :   Values appropriate to an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
+      `service_instance`, `resource_type`, and `resource`
+      :   Values appropriate to an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
 
 `--rules RULES`
 :   A JSON formatted rule definition enclosed in single quotation marks. For example,
 
-    ```json
-    --rules '[{"action": "send", "targets":[{"id": "11111111-1111-1111-1111-111111111111"}], "inclusion_filters":[{"operand": "location","operator": "is","values": ["us-south"]}]}]
-    ```
-    {: codeblock}
+   ```json
+   --rules '[{"action": "send", "targets":[{"id": "11111111-1111-1111-1111-111111111111"}], "inclusion_filters":[{"operand": "location","operator": "is","values":["us-south"]}]}]
+   ```
+   {: codeblock}
 
-    Where `target_ids` is a comma-separated list of target IDs.
+   Where `target_ids` is a comma-separated list of target IDs.
 
-    The rule definition can optionally also include inclusion filters. For example,
+   The rule definition can optionally also include inclusion filters. For example,
 
-    ```json
-    [{
-        "action": "send",
-        "targets": [{
-          "id":"11111111-1111-1111-1111-111111111111"
-        }],
-        "inclusion_filters": [
-            {
-              "operand": "service_name",
-              "operator": "in",
-              "values": [
-                "appconnect",
-                "cloudant",
-                "containers-kubernetes"
-              ]
-            },
-            {
-              "operand": "location",
-              "operator": "in",
-              "values": [
-                "us-south",
-                "eu-de"
-              ]
-            }
-        ]
-      }]
-    ```
-    {: codeblock}
+   ```json
+   [{
+       "action": "send",
+       "targets": [{
+         "id":"11111111-1111-1111-1111-111111111111"
+       }],
+       "inclusion_filters": [
+           {
+             "operand": "service_name",
+             "operator": "in",
+             "values": [
+               "appconnect",
+               "cloudant",
+               "containers-kubernetes"
+             ]
+           },
+           {
+             "operand": "location",
+             "operator": "in",
+             "values": [
+               "us-south",
+               "eu-de"
+             ]
+           }
+       ]
+     }]
+   ```
+   {: codeblock}
 
-    Where:
+   Where:
 
    `action`
    :   Action defines whether {{site.data.keyword.metrics_router_full}} includes or excludes metrics on the route. Two actions are supported: `send` and `drop`. If not specified, the default action is to send the metrics.
@@ -407,29 +407,29 @@ ibmcloud metrics-router route update --route ROUTE [--name ROUTE_NAME] ( --rules
    `operator`
    :   Two operators are supported: `in` and `is`.
 
-       `in`
-       :   The value of the operand property is compared to a list of values.
+      `in`
+      :   The value of the operand property is compared to a list of values.
 
-           You can define up to 20 values.
+         You can define up to 20 values.
 
-       `is`
-       :   The value of the operand property is compared to a single value.
+      `is`
+      :   The value of the operand property is compared to a single value.
 
-           When using `is`, only 1 value can be specified.
+         When using `is`, only 1 value can be specified.
 
    `values`
    :   A string, or an array of strings, to be compared with the `operand` property to determine whether the metric is routed or not. When the `is` `operator` is used, `values` must include a single string. When the `in` `operator` is used, `values` can include multiple strings in an array.
 
-       Valid values depend on the `operand`.
+      Valid values depend on the `operand`.
 
-       `location`
-       :   Any location where [{{site.data.keyword.metrics_router_full_notm}} is available.](/docs/metrics-router?topic=metrics-router-regions)
+      `location`
+      :   Any location where [{{site.data.keyword.metrics_router_full_notm}} is available.](/docs/metrics-router?topic=metrics-router-regions)
 
-       `service_name`
-       :   The CRN service name of an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
+      `service_name`
+      :   The CRN service name of an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
 
-       `service_instance`, `resource_type`, and `resource`
-       :   Values appropriate to an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
+      `service_instance`, `resource_type`, and `resource`
+      :   Values appropriate to an [{{site.data.keyword.cloud_notm}} service that generates metrics managed through [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-cloud-services-mr)
 
 `--output FORMAT`
 :   If `JSON` is specified, output is returned in JSON format. If `JSON` is not specified, output is returned in a tabular format.
@@ -525,8 +525,8 @@ ibmcloud metrics-router target create --name TARGET_NAME --destination-crn DESTI
 `--name TARGET_NAME`
 :   The name to be given to the target.
 
-    Do not include any personal identifying information (PII) in any resource names.
-    {: important}
+   Do not include any personal identifying information (PII) in any resource names.
+   {: important}
 
 `--destination-crn DESTINATION_TARGET_CRN`
 :   The CRN of the service instance or resource to receive the metrics sent by {{site.data.keyword.metrics_router_full_notm}}. Ensure you have a service authorization between {{site.data.keyword.metrics_router_full_notm}} and your {{site.data.keyword.cloud_notm}} resource. For more information, see [Managing authorizations to grant access between services.](/docs/metrics-router?topic=metrics-router-iam-service-auth).
@@ -562,8 +562,8 @@ ibmcloud metrics-router target update --target TARGET [--name TARGET_NAME] [--de
 `--name TARGET_NAME`
 :   The new name to be given to the target.
 
-    Do not include any personal identifying information (PII) in any resource names.
-    {: important}
+   Do not include any personal identifying information (PII) in any resource names.
+   {: important}
 
 `--destination-crn DESTINATION_TARGET_CRN`
 :   The CRN of the service instance or resource to receive the metrics sent by {{site.data.keyword.metrics_router_full_notm}}. Ensure you have a service authorization between {{site.data.keyword.metrics_router_full_notm}} and your {{site.data.keyword.cloud_notm}} resource. For more information, see [Managing authorizations to grant access between services.](/docs/metrics-router?topic=metrics-router-iam-service-auth).
@@ -680,9 +680,9 @@ ibmcloud metrics-router setting update [--primary-metadata-region REGION] [--bac
 `permitted-target-regions`
 :   `permitted-target-regions` is the list of regions that can be used to define a target. REGION is a comma-separated list of regions. If not specified, any number of regions can be used to define a target.
 
-    For example, to limit the regions that can be used to define targets to `us-south` and `eu-de`, specify: `--permitted-target-regions us-south,eu-de`.
+   For example, to limit the regions that can be used to define targets to `us-south` and `eu-de`, specify: `--permitted-target-regions us-south,eu-de`.
 
-    To delete all configured regions, specify `--permitted-target-regions ""`.
+   To delete all configured regions, specify `--permitted-target-regions ""`.
 
 `primary-metadata-region`
 :   `primary-metadata-region` is the location where the metadata for your {{site.data.keyword.metrics_router_full_notm}} configuration is stored.
