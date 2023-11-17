@@ -567,6 +567,7 @@ ibmcloud metrics-router target update --target TARGET [--name TARGET_NAME] [--de
 
 `--destination-crn DESTINATION_TARGET_CRN`
 :   The CRN of the service instance or resource to receive the metrics sent by {{site.data.keyword.metrics_router_full_notm}}. Ensure you have a service authorization between {{site.data.keyword.metrics_router_full_notm}} and your {{site.data.keyword.cloud_notm}} resource. For more information, see [Managing authorizations to grant access between services.](/docs/metrics-router?topic=metrics-router-iam-service-auth).
+
 `--output FORMAT`
 :   Support format is JSON. If specified, output is returned in JSON format. If `JSON` is not specified, output is returned in a tabular format.
 
