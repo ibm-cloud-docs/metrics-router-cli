@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years:  2023
-lastupdated: "2023-06-06"
+  years:  2023, 2024
+lastupdated: "2024-07-09"
 
 subcollection: metrics-router-cli-plugin
 
-keywords: IBM Cloud Metrics Routing CLI, IBM Cloud Metrics Routing command line, IBM Cloud Metrics Routing terminal, IBM Cloud Metrics Routing shell
+keywords: 
 
 ---
 
