@@ -6,7 +6,6 @@ toc:
     href: /docs/metrics-router-cli
     path: metrics-router-cli
     label: IBM Cloud Metrics Routing CLI
-
   entries:
   - navgroup:
       id: reference
