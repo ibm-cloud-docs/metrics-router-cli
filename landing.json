@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "title": "IBM Cloud Metrics Routing",
+  "introduction": "Use IBM Cloud Metrics Routing to configure how to route platform metrics in your IBM Cloud account.",
+  "section_topics": {
+    "links": [
+      {
+        "title": "Getting started with IBM Cloud Metrics Routing",
+        "href": "/docs/metrics-router?topic=metrics-router-getting-started"
+      },
+      {
+        "title": "About IBM Cloud Metrics Routing",
+        "href": "/docs/metrics-router?topic=metrics-router-about"
+      },
+      {
+        "title": "Managing access with IAM",
+        "href": "/docs/metrics-router?topic=metrics-router-iam"
+      },
+      {
+        "title": "Auditing events for IBM Cloud Metrics Routing",
+        "href": "/docs/metrics-router?topic=metrics-router-at_events"
+      },
+      {
+        "title": "Platform metrics for IBM Cloud Metrics Routing",
+        "href": "/docs/metrics-router?topic=metrics-router-platform-metrics"
+      },
+      {
+        "title": "Understanding your responsibilities when using IBM Cloud Metrics Routing",
+        "href": "/docs/metrics-router?topic=metrics-router-shared-responsibilities"
+      }
+    ]
+  },
+  "section_devtools": {
+    "api": "/apidocs/metrics-router",
+    "cli": "/docs/metrics-router?topic=metrics-router-metrics-router-cli",
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/metrics_router_route"
+  },
+  "section_updates": {
+    "view_more": "/docs/metrics-router?topic=metrics-router-metrics-router-release-notes"
+  }
+}
