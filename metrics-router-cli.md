@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years:  2023, 2024
-lastupdated: "2024-07-09"
+  years:  2023, 2025
+lastupdated: "2025-02-23"
 
-subcollection: metrics-router-cli-plugin
+subcollection: metrics-router-cli
 
 keywords: 
 
